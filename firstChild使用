@@ -1,0 +1,19 @@
+window.onload=function ()
+{
+	var oUl=document.getElementById('ul1');
+	
+	//IE6-8
+	//oUl.firstChild.style.background='red';
+	
+	//高级浏览器
+	//oUl.firstElementChild.style.background='red';
+	
+	if(oUl.firstElementChild)
+	{
+		oUl.firstElementChild.style.background='red';
+	}
+	else
+	{
+		oUl.firstChild.style.background='red';
+	}
+};
