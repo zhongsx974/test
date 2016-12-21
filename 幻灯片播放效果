@@ -1,0 +1,39 @@
+window.onload=function(){
+		var oDiv=document.getElementById('play');
+		var aBtn=oDiv.getElementsByTagName('ol')[0].getElementsByTagName('li');
+		var oUl=oDiv.getElementsByTagName('ul')[0];
+
+		var now=0;
+		for(var i=0;i<aBtn.length;i++){
+			aBtn[i].index=i;
+			aBtn[i].onmouseover=function(){
+				now=this.index;
+				tab();
+			}
+		}
+		function tab(){
+			for (var i=0;i<aBtn.length;i++){
+				aBtn[i].className='';
+			}
+			aBtn[now].className='active';
+//				oUl.style.top=-150*this.index+'px';
+			startMove(oUl,{top:-150*now})
+		}
+
+		function next(){
+			now++;
+			if(now==aBtn.length){
+				now=0;
+			}
+			tab();
+		}
+
+		var timer=setInterval(next,2000);
+
+		oUl.onmouseover=function(){
+			clearInterval(timer);
+		}
+		oUl.onmouseout=function(){
+			timer=setInterval(next,2000);
+		}
+	}
