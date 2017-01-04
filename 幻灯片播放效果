@@ -36,4 +36,4 @@ window.onload=function(){
 		oUl.onmouseout=function(){
 			timer=setInterval(next,2000);
 		}
-	}
+	}/**/
