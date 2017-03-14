@@ -17,6 +17,7 @@ function ajax(url, fnSucc, fnFaild)
 	//3.发送请求
 	oAjax.send();
 	
+	//
 	//4.接收返回
 	oAjax.onreadystatechange=function ()
 	{
